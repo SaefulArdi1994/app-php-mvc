@@ -1,4 +1,5 @@
-
+<div class="container">
+    
     <h1>About Me</h1>
     <h4>nama saya <?= $data['nama'] ?> , dan pekerjaan sebagai <?= $data['pekerjaan']?></h4>
     <p>
@@ -6,3 +7,4 @@
         Sunt est laudantium, obcaecati nostrum earum ex cum corporis, maiores ut nulla pariatur enim illum facere deleniti quisquam? Rem libero dignissimos repellendus ipsum modi eligendi accusamus adipisci, similique quo itaque!
         Sit sint consequuntur amet magni deserunt sequi, corporis ea perferendis libero vel dicta facilis officia eos sunt numquam dolor? Vitae, perspiciatis? Nesciunt laboriosam ipsa beatae voluptatibus, vero assumenda similique deserunt?
     </p>
+</div>
