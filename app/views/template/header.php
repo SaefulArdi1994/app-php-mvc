@@ -23,7 +23,7 @@
             <a class="nav-link" href="<?= BASEURL ?>/about">About</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="<?= BASEURL ?>/buku">Buku</a>
             </li>
         </ul>
         </div>
