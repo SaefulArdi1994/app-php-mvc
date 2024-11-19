@@ -17,13 +17,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>">Home</a>
+                <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="<?= BASEURL ?>/about">About</a>
+                <a class="nav-link" href="<?= BASEURL ?>/buku">Buku</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="<?= BASEURL ?>/buku">Buku</a>
+                <a class="nav-link" href="<?= BASEURL ?>/about">About</a>
             </li>
         </ul>
         </div>
