@@ -21,6 +21,14 @@ class Buku extends Controller {
         $this->view('buku/detail', $data);
         $this->view('template/footer');
     }
+
+    public function tambah()
+    {
+       if( $this->model('buku_model')->tambahDataBuku($_POST) > 0 ) {
+        header('Location: ' . BASEURL . '/buku');
+        exit;
+       }
+    }
 }
 
 ?>
