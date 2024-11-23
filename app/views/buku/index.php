@@ -6,6 +6,12 @@
     </button>
 
     <div class="row">
+        <div class="col-lg-6 mt-3">
+            <?php Flasher::flash(); ?>
+        </div>
+    </div>
+
+    <div class="row">
         <h3>Daftar Buku</h3>
 
         <?php foreach($data['bk'] as $bk) : ?>
@@ -70,7 +76,7 @@
 
                 <div class="form-group">
                     <label for="gambar" class="form-label">Gambar</label>
-                    <input type="file" class="form-control" id="gambar" name="gambar" >
+                    <input type="text" class="form-control" id="gambar" name="gambar" >
                 </div>
 
                 <div class="form-group">

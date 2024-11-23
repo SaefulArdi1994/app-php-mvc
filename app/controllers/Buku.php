@@ -25,8 +25,13 @@ class Buku extends Controller {
     public function tambah()
     {
        if( $this->model('buku_model')->tambahDataBuku($_POST) > 0 ) {
-        header('Location: ' . BASEURL . '/buku');
-        exit;
+            Flasher::setflash('berhasil', 'ditambahkan', 'success');
+            header('Location: ' . BASEURL . '/buku');
+            exit;
+       } else {
+            Flasher::setflash('gagal', 'ditambahkan', 'danger');
+            header('Location: ' . BASEURL . '/buku');
+            exit;
        }
     }
 }

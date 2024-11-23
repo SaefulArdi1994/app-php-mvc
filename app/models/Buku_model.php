@@ -43,7 +43,6 @@ class Buku_model {
         return $this->db->rowCount();
     }
 
-
 }
 
 ?>
