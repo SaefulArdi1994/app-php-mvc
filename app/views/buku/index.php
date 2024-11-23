@@ -28,6 +28,7 @@
                                 <p class="card-text"><?= $bk['deskripsi']?></p>
                                 <p class="card-text"><small class="text-body-secondary"><?= $bk['tanggal_terbit']; ?> ~ <?= $bk['penulis'] ?></small></p>
                                 <a href="<?= BASEURL; ?>/buku/detail/<?= $bk['id']; ?>" class="btn btn-primary">Detail</a>
+                                <a href="<?= BASEURL; ?>/buku/hapus/<?= $bk['id']; ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ?')">Hapus</a>
                             </div>
                         </div>
                     </div>

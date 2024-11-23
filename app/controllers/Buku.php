@@ -34,6 +34,20 @@ class Buku extends Controller {
             exit;
        }
     }
+
+    
+    public function hapus($id)
+    {
+       if( $this->model('buku_model')->hapusDataBuku($id) > 0 ) {
+            Flasher::setflash('berhasil', 'dihapus', 'success');
+            header('Location: ' . BASEURL . '/buku');
+            exit;
+       } else {
+            Flasher::setflash('gagal', 'dihapus', 'danger');
+            header('Location: ' . BASEURL . '/buku');
+            exit;
+       }
+    }
 }
 
 ?>
