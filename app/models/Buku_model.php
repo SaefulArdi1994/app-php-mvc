@@ -54,6 +54,36 @@ class Buku_model {
         return $this->db->rowCount();
     }
 
+    public function editDataBuku($data) 
+    {
+        $query = "UPDATE buku SET 
+                    kode_buku = :kode_buku,
+                    nama_buku = :nama_buku,
+                    deskripsi = :deskripsi,
+                    penulis = :penulis,
+                    penerbit = :penerbit,
+                    gambar = :gambar,
+                    tanggal_terbit = :tanggal_terbit,
+                    tanggal_posting = :tanggal_posting 
+                    WHERE id = :id
+                ";
+                
+        $this->db->query($query);
+        $this->db->bind('id', $data['id']);
+        $this->db->bind('kode_buku', $data['kode_buku']);
+        $this->db->bind('nama_buku', $data['nama_buku']);
+        $this->db->bind('deskripsi', $data['deskripsi']);
+        $this->db->bind('penulis', $data['penulis']);
+        $this->db->bind('penerbit', $data['penerbit']);
+        $this->db->bind('gambar', $data['gambar']);
+        $this->db->bind('tanggal_terbit', $data['tanggal_terbit']);
+        $this->db->bind('tanggal_posting', date('Y-m-d H:i:s'));
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
 }
 
 ?>

@@ -1,7 +1,7 @@
 <div class="container">
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+    <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah Buku
     </button>
 
@@ -28,6 +28,7 @@
                                 <p class="card-text"><?= $bk['deskripsi']?></p>
                                 <p class="card-text"><small class="text-body-secondary"><?= $bk['tanggal_terbit']; ?> ~ <?= $bk['penulis'] ?></small></p>
                                 <a href="<?= BASEURL; ?>/buku/detail/<?= $bk['id']; ?>" class="btn btn-primary">Detail</a>
+                                <a href="<?= BASEURL; ?>/buku/edit/<?= $bk['id']; ?>" class="btn btn-warning formModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $bk['id'];?>">Edit</a>
                                 <a href="<?= BASEURL; ?>/buku/hapus/<?= $bk['id']; ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ?')">Hapus</a>
                             </div>
                         </div>
@@ -49,46 +50,45 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL ?>/buku/tambah" method="POST">
+                    <input type="hidden" name="id" id="id">
+                    <div class="form-group">
+                        <label for="kode_buku" class="form-label">Kode Buku</label>
+                        <input type="text" class="form-control" id="kode_buku" name="kode_buku" >
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="nama_buku" class="form-label">Nama Buku</label>
+                        <input type="text" class="form-control" id="nama_buku" name="nama_buku">
+                    </div>
 
-                <div class="form-group">
-                    <label for="kode_buku" class="form-label">Kode Buku</label>
-                    <input type="text" class="form-control" id="kode_buku" name="kode_buku" >
-                </div>
-            
-                <div class="form-group">
-                    <label for="nama_buku" class="form-label">Nama Buku</label>
-                    <input type="text" class="form-control" id="nama_buku" name="nama_buku">
-                </div>
+                    <div class="form-group">
+                        <label for="deskripsi" class="form-label">Deskripsi</label>
+                        <textarea class="form-control" id="deskripsi" name="deskripsi"></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <textarea class="form-control" id="deskripsi" name="deskripsi"></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="penulis" class="form-label">Penulis</label>
+                        <input type="text" class="form-control" id="penulis" name="penulis">
+                    </div>
 
-                <div class="form-group">
-                    <label for="penulis" class="form-label">Penulis</label>
-                    <input type="text" class="form-control" id="penulis" name="penulis">
-                </div>
+                    <div class="form-group">
+                        <label for="penerbit" class="form-label">Penerbit</label>
+                        <input type="text" class="form-control" id="penerbit" name="penerbit">
+                    </div>
 
-                <div class="form-group">
-                    <label for="penerbit" class="form-label">Penerbit</label>
-                    <input type="text" class="form-control" id="nama" name="penerbit">
-                </div>
+                    <div class="form-group">
+                        <label for="gambar" class="form-label">Gambar</label>
+                        <input type="text" class="form-control" id="gambar" name="gambar" >
+                    </div>
 
-                <div class="form-group">
-                    <label for="gambar" class="form-label">Gambar</label>
-                    <input type="text" class="form-control" id="gambar" name="gambar" >
-                </div>
-
-                <div class="form-group">
-                    <label for="tanggal_terbit" class="form-label">Tangga Terbit</label>
-                    <input type="text" class="form-control" id="tanggal_terbit" name="tanggal_terbit">
-                </div>
-
+                    <div class="form-group">
+                        <label for="tanggal_terbit" class="form-label">Tangga Terbit</label>
+                        <input type="text" class="form-control" id="tanggal_terbit" name="tanggal_terbit">
+                    </div>
             </div>
-            <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Tambah Data</button>
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Tambah Data</button>
                 </form>  
             </div>
         </div>

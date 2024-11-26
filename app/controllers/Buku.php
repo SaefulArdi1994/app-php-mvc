@@ -48,6 +48,25 @@ class Buku extends Controller {
             exit;
        }
     }
+
+     public function getEdit() 
+     {
+          // echo $_POST['id'];
+          echo json_encode( $this->model('Buku_model')->getBukuById($_POST['id']));
+     }
+
+     public function edit()
+     {
+          if( $this->model('buku_model')->editDataBuku($_POST) > 0 ) {
+               Flasher::setflash('berhasil', 'di edit', 'success');
+               header('Location: ' . BASEURL . '/buku');
+               exit;
+          } else {
+               Flasher::setflash('gagal', 'di edit', 'danger');
+               header('Location: ' . BASEURL . '/buku');
+               exit;
+          }
+     }
 }
 
 ?>
