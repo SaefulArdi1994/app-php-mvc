@@ -67,6 +67,16 @@ class Buku extends Controller {
                exit;
           }
      }
+
+     public function cari()
+     {
+          $data['judul'] = 'Daftar Buku';
+          $data['bk'] = $this->model('Buku_model')->cariDataBuku();
+
+          $this->view('template/header', $data);
+          $this->view('buku/index', $data);
+          $this->view('template/footer');
+     }
 }
 
 ?>

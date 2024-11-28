@@ -84,6 +84,15 @@ class Buku_model {
         return $this->db->rowCount();
     }
 
+    public function cariDataBuku()
+    {
+        $keyword = $_POST['keyword'];
+        $query = "SELECT * FROM buku WHERE nama_buku LIKE :keyword";
+        $this->db->query($query);
+        $this->db->bind("keyword", "%$keyword%");
+        return $this->db->resultSet();
+    }
+
 }
 
 ?>
